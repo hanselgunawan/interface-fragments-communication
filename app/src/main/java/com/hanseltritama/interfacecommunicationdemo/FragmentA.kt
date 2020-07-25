@@ -26,6 +26,7 @@ class FragmentA : Fragment() {
 
         view.fragment_a_button.setOnClickListener(object: View.OnClickListener {
             override fun onClick(v: View?) {
+                // Needed for Activity to communicate with the interface
                 listener?.onInputASent(fragment_a_edit_text.text.toString())
             }
         })
