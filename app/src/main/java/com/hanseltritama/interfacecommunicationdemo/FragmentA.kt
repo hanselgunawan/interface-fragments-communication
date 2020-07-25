@@ -17,6 +17,7 @@ class FragmentA : Fragment() {
 
     // Interface to communicate between fragment & activity
     interface FragmentAListener {
+        // Needed for Activity to access all public functions here
         fun onInputASent(input: String)
     }
 

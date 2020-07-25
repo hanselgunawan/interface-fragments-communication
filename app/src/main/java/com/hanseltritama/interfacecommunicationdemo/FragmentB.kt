@@ -16,6 +16,7 @@ class FragmentB : Fragment() {
 
     // Interface to communicate between fragment & activity
     interface FragmentBListener {
+        // Needed for Activity to access all public functions here
         fun onInputBSent(input: String)
     }
 
