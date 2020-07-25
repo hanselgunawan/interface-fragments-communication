@@ -13,7 +13,7 @@ import java.lang.RuntimeException
 
 class FragmentA : Fragment() {
 
-    private lateinit var listener: FragmentAListener
+    private var listener: FragmentAListener? = null
 
     // Interface to communicate between fragment & activity
     interface FragmentAListener {
@@ -26,7 +26,7 @@ class FragmentA : Fragment() {
 
         view.fragment_a_button.setOnClickListener(object: View.OnClickListener {
             override fun onClick(v: View?) {
-                listener.onInputASent(fragment_a_edit_text.text.toString())
+                listener?.onInputASent(fragment_a_edit_text.text.toString())
             }
         })
 
@@ -47,5 +47,10 @@ class FragmentA : Fragment() {
             throw RuntimeException(context.toString()
             + " must implement FragmentAListener")
         }
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        listener = null
     }
 }
