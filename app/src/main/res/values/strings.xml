@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Interface Communication Demo</string>
+    <string name="submit_text">Submit</string>
 </resources>
